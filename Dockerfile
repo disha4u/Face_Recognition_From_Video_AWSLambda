@@ -55,10 +55,18 @@ RUN chmod 755 /usr/bin/aws-lambda-rie
 # Install ffmpeg
 RUN apt-get install -y ffmpeg
 
-RUN git clone https://oauth2:github_pat_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@github.com/Face_Recognition_From_Video_AWSLambda.git  ${FUNCTION_DIR}
-RUN git fetch --all
-RUN git checkout AWSLambda
-RUN git pull
+# RUN git clone https://oauth2:github_pat_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@github.com/Face_Recognition_From_Video_AWSLambda.git  
+# RUN cd Face_Recognition_From_Video_AWSLambda
+# RUN git fetch --all
+# RUN git checkout AWSLambda
+# RUN git pull
+
+COPY requirements.txt ${FUNCTION_DIR}
+COPY encoding ${FUNCTION_DIR}
+COPY s3_utils.py ${FUNCTION_DIR}
+COPY handler.py ${FUNCTION_DIR}
+COPY entry.sh ${FUNCTION_DIR}
+
 
 RUN python${RUNTIME_VERSION} -m pip install -r requirements.txt --target ${FUNCTION_DIR}
 
