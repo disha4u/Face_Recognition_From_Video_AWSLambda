@@ -55,14 +55,13 @@ RUN chmod 755 /usr/bin/aws-lambda-rie
 # Install ffmpeg
 RUN apt-get install -y ffmpeg
 
-# Copy handler function
-COPY requirements.txt ${FUNCTION_DIR}
-RUN python${RUNTIME_VERSION} -m pip install -r requirements.txt --target ${FUNCTION_DIR}
-COPY entry.sh /
+RUN git clone https://oauth2:github_pat_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@github.com/Face_Recognition_From_Video_AWSLambda.git  ${FUNCTION_DIR}
+RUN git fetch --all
+RUN git checkout AWSLambda
+RUN git pull
 
-# Copy function code
-COPY handler.py ${FUNCTION_DIR}
-COPY s3_utils.py ${FUNCTION_DIR}
+RUN python${RUNTIME_VERSION} -m pip install -r requirements.txt --target ${FUNCTION_DIR}
+
 RUN chmod 777 /entry.sh
 
 # Set the CMD to your handler (could also be done as a parameter override outside of the Dockerfile)
