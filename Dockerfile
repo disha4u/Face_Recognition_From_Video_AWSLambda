@@ -65,8 +65,9 @@ COPY requirements.txt ${FUNCTION_DIR}
 COPY encoding ${FUNCTION_DIR}
 COPY s3_utils.py ${FUNCTION_DIR}
 COPY handler.py ${FUNCTION_DIR}
-COPY entry.sh ${FUNCTION_DIR}
-
+COPY entry.sh /
+RUN mkdir video
+RUN mkdir tmp
 
 RUN python${RUNTIME_VERSION} -m pip install -r requirements.txt --target ${FUNCTION_DIR}
 
@@ -75,4 +76,4 @@ RUN chmod 777 /entry.sh
 # Set the CMD to your handler (could also be done as a parameter override outside of the Dockerfile)
 # CMD [ "handler.handler" ]
 ENTRYPOINT [ "/entry.sh" ]
-CMD [ "handler.face_recognition_handler" ]
+CMD [ "handler.main_handler" ]

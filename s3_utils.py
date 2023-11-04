@@ -32,7 +32,7 @@ class S3(object):
 
     @staticmethod
     def read_file(name,key,download_path):
-        S3.s3.download_file(Bucket=name,Key=key,Filename=download_path)
+        S3.s3.download_file(Bucket=name,Key=key,Filename=download_path+key)
         
     
     @staticmethod
