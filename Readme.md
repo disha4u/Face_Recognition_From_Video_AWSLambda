@@ -14,6 +14,7 @@
 
 ## Getting Started
 
+aws dynamodb batch-write-item --request-items file://student_data.json  to write data to DynamoDB
 
 1. We run the workload.py script to test our test cases. This script inputs the s3 input bucket from
 there it triggers the lambda function and from the lambda function the outputs are stored in the
