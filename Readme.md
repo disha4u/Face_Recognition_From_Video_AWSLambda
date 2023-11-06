@@ -14,34 +14,12 @@
 
 ## Getting Started
 
-There are 
 
-```
-pip3 install -r requirements.txt
-```
-
-For running the main flask server:
-
-```
-cd /home/ec2-user/Cloud_Project1
-nohup python web_server.py &
-```
-
-For running the controller script to perform auto-scaling:
-
-```
-cd /home/ec2-user/Cloud_Project1
-python3 appScaler.py
-```
-
-For running the app-tier code, first install the dependancies using pip.
-Use amiID ami-0d5865d3d6fffbdb2 to launch the instance
-
-```
-cd /home/ubuntu/app-tier
-python3 main.py
-```
-
+1. We run the workload.py script to test our test cases. This script inputs the s3 input bucket from
+there it triggers the lambda function and from the lambda function the outputs are stored in the
+output bucket.
+2. We check the input buckets whether the videos are getting updated in the bucket or not. After a
+while we check the output bucket for results. Logs are created for debugging.
 
 <!-- LICENSE -->
 
