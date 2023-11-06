@@ -33,7 +33,6 @@ while we check the output bucket for results. Logs are created for debugging.
 
 - AWS Credentials are provided in the Excel file.
 
-- The PEM key file is added to the submission.
   IMAGE_BUCKET = 'cc-p2-input-bucket'
   OUTPUT_BUCKET = 'cc-p2-output-bucket'
 
