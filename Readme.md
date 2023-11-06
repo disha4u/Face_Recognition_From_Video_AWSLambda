@@ -47,15 +47,15 @@ python3 main.py
 
 #### Team Members
 
-1. Ramchandra Sai- Worked on creating trigger and docker image , uploading it toECR.
-2. Disha Agarwal - Worked on lambda function parts face recognition, video splitting and retrieving info from dynamodb
-3. Sanket Duhoon - Worked on creating dynamodb database, querying database, and fixing bugs in handler.py
+1. Ramchandra Sai- Worked on creating trigger and docker image , uploading it to ECR.
+2. Disha Agarwal - Worked on lambda function parts face recognition, video splitting and retrieving info from dynamodb.
+3. Sanket Duhoon - Worked on creating dynamodb database, querying database, and fixing bugs in handler.py.
 
 ##### AWS Resources
 
 - AWS Credentials are provided in the Excel file.
 
 - The PEM key file is added to the submission.
-  IMAGE_BUCKET = 'cc-p2-img-store'
-  OUTPUT_BUCKET = 'cc-p2-label-store'
+  IMAGE_BUCKET = 'cc-p2-input-bucket'
+  OUTPUT_BUCKET = 'cc-p2-output-bucket'
 
