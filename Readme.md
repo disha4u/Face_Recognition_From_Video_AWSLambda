@@ -1,28 +1,20 @@
-#Elastic Application - Image Recognition
+#Elastic Application - Face Recognition & Retrieve data from DynamoDB using AWS Lambda
 
 ##About the Project
 
 ####Code Strucutre
 ├── Readme.md
-├── app-tier
-│   ├── image_classification.py
-│   ├── main.py
-│   ├── s3_utils.py
-│   └── sqs_utils.py
-├── Cloud_Project1
-│   ├── web_server.py
-│   ├── appScaler.py
-│   ├── credentials.py
-│   ├── customEC2Manager.py
-│   ├── sqs_utils.py
-│   └── requirements.txt
+├── handler.py
+├── DockerFile
+├── encoding
+├── entry.sh
+├── requirements.txt
 └── workload_generator
 
 
 ## Getting Started
 
-There are two folders, Cloud_Project1(web_tier) and app-tier each containing their separate dependencies and code.
-To install the required dependencies, run
+There are 
 
 ```
 pip3 install -r requirements.txt
@@ -55,16 +47,15 @@ python3 main.py
 
 #### Team Members
 
-1. Ramchandra Sai- Worked on the web-tier part of the application.
-2. Disha Agarwal - Worked on the apptier part
-3. Sanket Duhoon - Worked on the auto scaler part.
+1. Ramchandra Sai- Worked on creating trigger and docker image , uploading it toECR.
+2. Disha Agarwal - Worked on lambda function parts face recognition, video splitting and retrieving info from dynamodb
+3. Sanket Duhoon - Worked on creating dynamodb database, querying database, and fixing bugs in handler.py
 
 ##### AWS Resources
 
 - AWS Credentials are provided in the Excel file.
 
 - The PEM key file is added to the submission.
-  IMAGE_BUCKET = 'cc-p1-img-store'
-  OUTPUT_BUCKET = 'cc-p1-label-store'
-  INPUT_QUEUE = "https://sqs.us-east-1.amazonaws.com/770825654535/requestQueue"
-  OUTPUT_QUEUE = "https://sqs.us-east-1.amazonaws.com/770825654535/responseQueue"
+  IMAGE_BUCKET = 'cc-p2-img-store'
+  OUTPUT_BUCKET = 'cc-p2-label-store'
+
