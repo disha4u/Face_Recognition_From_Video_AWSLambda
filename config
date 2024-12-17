@@ -1,0 +1,5 @@
+Host 18.234.169.207
+  HostName 18.234.169.207
+  User ubuntu
+  IdentityFile C:\Users\Disha\Desktop\ASU\cloud_computing\server.pem
+  
